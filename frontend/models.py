@@ -1,4 +1,4 @@
-from ckeditor_uploader.fields import RichTextUploadingField
+
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
