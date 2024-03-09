@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %} Denmark - Home {% endblock %} </title>
+<!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+	<!-- plugins css -->
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/bootstrap/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/reey-font/stylesheet.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/font-awesome/css/all.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/animate/animate.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/flaticon/css/flaticon_towngov.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/owl-carousel/owl.carousel.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/swiper/swiper-bundle.min.css' %}">
+	<link rel="stylesheet" href="{% static 'frontend/assets/vendor/youtube-popup/youtube-popup.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/style.css' %}">
+	<!-- favicons Icons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'frontend/assets/image/favicon/denmark_fav.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'frontend/assets/image/favicon/denmark_fav.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'frontend/assets/image/favicon/denmark_fav.png' %}">
+
+</head>
+<body>
+<div id="pre-loader">
+    <div id="loader-logo"></div><!-- loader-logo -->
+    <div id="loader-circle"></div><!-- loader-circle -->
+    <div class="loader-section section-left"></div><!-- loader-section -->
+    <div class="loader-section section-right"></div><!-- loader-section -->
+</div><!-- pre-loader -->
+<header class="header">
+	<div class="topbar">
+		<div class="topbar-inner">
+			<div class="topbar-left">
+				<div class="topbar-socials">
+					<a href="https://twitter.com/denmarkdotdk?lang=en"><i class="fa-brands fa-twitter"></i></a>
+					<a href="https://da-dk.facebook.com/denmark.dk/"><i class="fa-brands fa-facebook"></i></a>
+					<a href="https://www.instagram.com/denmarkdotdk/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+				</div><!--topbar-socials-->
+				<div class="topbar-info">
+					<ul>
+						<li>
+							<div class="topbar-icon">
+								<i class="fa-solid fa-envelope"></i>
+							</div><!-- topbar-icon -->
+							<div class="topbar-text">
+								<a href="mailto:help@denmarkgov.dk">help@denmarkgov.dk</a>
+							</div><!-- topbar-text -->
+						</li><!-- li -->
+						<li>
+							<div class="topbar-icon">
+								<i class="fa-solid fa-clock"></i>
+							</div><!-- topbar-icon -->
+							<div class="topbar-text">
+								<span>Open Hours: Mon - Fri 8.00 am - 6.00 pm</span>
+							</div><!-- topbar-text -->
+						</li><!-- li -->
+					</ul><!-- ul -->
+				</div><!--topbar-info-->
+			</div><!-- topbar-left -->
+		</div><!-- topbar-inner -->
+	</div><!--topbar-->
+	<div class="main-menu sticky-header">
+		<div class="main-menu-inner">
+			<div class="main-menu-left">
+				<div class="main-menu-logo">
+					<a href="{% url 'frontend:home' %}"><svg class="logo-denmark-simple" xmlns="http://www.w3.org/2000/svg" width="125" height="29">
+                <g transform="matrix(.1848 0 0 .18421 .5 .825)">
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M252.7 152c12.5 0 22.6-10.1 22.6-22.6 0-12.5-10.1-22.6-22.6-22.6-12.5 0-22.6 10.1-22.6 22.6 0 12.5 10.1 22.6 22.6 22.6" fill="#e01836"></path>
+                            </g>
+                            <g>
+                                <path d="M0 0h63.9v63.9H0z" fill="#e01836"></path>
+                                <path d="M85.2 0H197v63.9H85.2z" fill="#e01836"></path>
+                                <path d="M85.2 85.2H197v63.9H85.2z" fill="#e01836"></path>
+                                <path d="M0 85.2h63.9v63.9H0z" fill="#e01836"></path>
+                            </g>
+                            <path d="M429.1 149.4H383l.7-11.9C376 147.2 363 152 349 152c-31.4 0-50.9-25.1-50.9-57.6s19.5-57.6 50.9-57.6c22.7 0 31.8 11.9 31.8 11.9s-.4-8.7-.4-17.3V0h48.7v149.4zm-64.5-74.7c-9.1 0-17.3 6.5-17.3 19.1 0 12.3 8.2 18.8 17.3 18.8 9.3 0 17.3-6.5 17.3-18.8 0-12.6-8-19.1-17.3-19.1z" fill="#e01836"></path>
+                            <path d="M579 149.4h-55.2l-17.3-33.6-7.1 7.6v26h-48.7V0h48.7v68.2L522.7 39h55.2L540 80.1l39 69.3z" fill="#e01836"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg></a>
+				</div><!--main-menu-logo-->
+				<div class="navigation">
+					<ul class="main-menu-list list-unstyled">
+						<li class="">
+							<a href="{% url 'frontend:home' %}">Home</a>
+						</li>
+						<li class="active">
+							<a href="{% url 'frontend:all_services' %}">Services</a>
+						</li><!--has-dropdown-->
+						<li class="">
+							<a href="{% url 'frontend:all_departments' %}">Departments</a>
+						</li><!--has-dropdown-->
+
+						</li><!-- li -->
+					</ul><!-- main-menu-list -->
+				</div><!--navigation-->
+			</div><!--main-menu-left-->
+			<div class="main-menu-right">
+				<div class="mobile-menu-button mobile-nav-toggler">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div><!-- mobile-menu-button -->
+			</div><!--main-menu-right-->
+		</div><!--main-menu-inner-->
+	</div><!--main-menu-->
+</header><!--header-->
+{% block content %}
+{% endblock %}
+<section class="footer">
+	<div class="footer-inner">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="footer-widget-logo">
+						<a href="{% url 'frontend:home' %}"><svg class="logo-denmark-simple" xmlns="http://www.w3.org/2000/svg" width="125" height="29">
+                <g transform="matrix(.1848 0 0 .18421 .5 .825)">
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M252.7 152c12.5 0 22.6-10.1 22.6-22.6 0-12.5-10.1-22.6-22.6-22.6-12.5 0-22.6 10.1-22.6 22.6 0 12.5 10.1 22.6 22.6 22.6" fill="#e01836"></path>
+                            </g>
+                            <g>
+                                <path d="M0 0h63.9v63.9H0z" fill="#e01836"></path>
+                                <path d="M85.2 0H197v63.9H85.2z" fill="#e01836"></path>
+                                <path d="M85.2 85.2H197v63.9H85.2z" fill="#e01836"></path>
+                                <path d="M0 85.2h63.9v63.9H0z" fill="#e01836"></path>
+                            </g>
+                            <path d="M429.1 149.4H383l.7-11.9C376 147.2 363 152 349 152c-31.4 0-50.9-25.1-50.9-57.6s19.5-57.6 50.9-57.6c22.7 0 31.8 11.9 31.8 11.9s-.4-8.7-.4-17.3V0h48.7v149.4zm-64.5-74.7c-9.1 0-17.3 6.5-17.3 19.1 0 12.3 8.2 18.8 17.3 18.8 9.3 0 17.3-6.5 17.3-18.8 0-12.6-8-19.1-17.3-19.1z" fill="#e01836"></path>
+                            <path d="M579 149.4h-55.2l-17.3-33.6-7.1 7.6v26h-48.7V0h48.7v68.2L522.7 39h55.2L540 80.1l39 69.3z" fill="#e01836"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg></a>
+					</div><!-- footer-widget-logo -->
+					<div class="footer-widget-text">
+						<p>Denmark is renowned for its efficient and well-organized government services. </p>
+					</div><!-- footer-widget-text -->
+					<div class="footer-widget-socials">
+					<a href="https://twitter.com/denmarkdotdk?lang=en"><i class="fa-brands fa-twitter"></i></a>
+					<a href="https://da-dk.facebook.com/denmark.dk/"><i class="fa-brands fa-facebook"></i></a>
+					<a href="https://www.instagram.com/denmarkdotdk/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+					</div><!-- footer-widget-socials -->
+				</div><!--col-lg-4-->
+				<div class="col-lg-3">
+					<div class="footer-widget">
+						<div class="footer-widget-explore">
+							<h4 class="footer-widget-title">Explore</h4>
+							<ul class="list-unstyled">
+								<li><a href="#">Our Government</a></li>
+								<li><a href="#">Business & Industry</a></li>
+								<li><a href="#">Roads & Transport</a></li>
+								<li><a href="#">License & Registrations</a></li>
+							</ul><!-- list-unstyled -->
+						</div><!-- footer-widget-explore -->
+					</div><!--footer-widget-->
+				</div><!--col-lg-3-->
+				<div class="col-lg-2">
+					<div class="footer-widget">
+						<div class="footer-widget-department">
+							<h4 class="footer-widget-title">Departments</h4>
+							<ul class="list-unstyled">
+								<li><a href="#">Health & Safety</a></li>
+								<li><a href="#">Housing & Land</a></li>
+								<li><a href="#">Legal & Finance</a></li>
+								<li><a href="#">Transport & Traffic</a></li>
+								<li><a href="#">Arts & Culture</a></li>
+							</ul><!-- list-unstyled -->
+						</div><!-- footer-widget-department -->
+					</div><!--footer-widget-->
+				</div><!--col-lg-2-->
+				<div class="col-lg-3">
+					<div class="footer-widget">
+						<div class="footer-widget-contact">
+							<h4 class="footer-widget-title">Contact</h4>
+							<p>Ministry of Foreign Affairs of Denmark Asiatisk Plads 2<br> DK - 1448 Copenhagen</p>
+						</div><!-- footer-widget-contact -->
+						<div class="footer-widget-contact-list">
+							<i class="fa-solid fa-envelope"></i>
+							<div class="footer-widget-contact-item">
+								<a href="mailto:help@denmarkgov.dk">help@denmarkgov.dk</a>
+							</div><!-- footer-widget-contact-item -->
+						</div><!-- footer-widget-contact-list -->
+						<div class="footer-widget-contact-list">
+							<i class="fa-solid fa-phone"></i>
+						</div><!-- footer-widget-contact-list -->
+					</div><!--footer-widget-->
+				</div><!--col-lg-3-->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!--footer-inner-->
+
+</section><!--footer-->
+<div class="mobile-nav-wrapper">
+	<div class="mobile-nav-overlay mobile-nav-toggler"></div><!-- mobile-nav-overlay -->
+	<div class="mobile-nav-content">
+		<a href="{% url 'frontend:home' %}" class="mobile-nav-close mobile-nav-toggler">
+			<span></span>
+			<span></span>
+		</a><!-- mobile-nav-close -->
+		<div class="logo-box">
+			<a href="{% url 'frontend:home' %}"><svg class="logo-denmark-simple" xmlns="http://www.w3.org/2000/svg" width="125" height="29">
+                <g transform="matrix(.1848 0 0 .18421 .5 .825)">
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M252.7 152c12.5 0 22.6-10.1 22.6-22.6 0-12.5-10.1-22.6-22.6-22.6-12.5 0-22.6 10.1-22.6 22.6 0 12.5 10.1 22.6 22.6 22.6" fill="#e01836"></path>
+                            </g>
+                            <g>
+                                <path d="M0 0h63.9v63.9H0z" fill="#e01836"></path>
+                                <path d="M85.2 0H197v63.9H85.2z" fill="#e01836"></path>
+                                <path d="M85.2 85.2H197v63.9H85.2z" fill="#e01836"></path>
+                                <path d="M0 85.2h63.9v63.9H0z" fill="#e01836"></path>
+                            </g>
+                            <path d="M429.1 149.4H383l.7-11.9C376 147.2 363 152 349 152c-31.4 0-50.9-25.1-50.9-57.6s19.5-57.6 50.9-57.6c22.7 0 31.8 11.9 31.8 11.9s-.4-8.7-.4-17.3V0h48.7v149.4zm-64.5-74.7c-9.1 0-17.3 6.5-17.3 19.1 0 12.3 8.2 18.8 17.3 18.8 9.3 0 17.3-6.5 17.3-18.8 0-12.6-8-19.1-17.3-19.1z" fill="#e01836"></path>
+                            <path d="M579 149.4h-55.2l-17.3-33.6-7.1 7.6v26h-48.7V0h48.7v68.2L522.7 39h55.2L540 80.1l39 69.3z" fill="#e01836"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg></a>
+		</div><!-- logo-box -->
+		<div class="mobile-nav-container"></div><!-- mobile-nav-container -->
+		<ul class="mobile-nav-contact list-unstyled">
+
+			<li>
+				<i class="fa-solid fa-envelope"></i>
+				<a href="mailto:help@denmarkgov.dk">help@denmarkgov.dk</a>
+			</li><!-- li -->
+			<li>
+				<i class="fa-solid fa-map-marker-alt"></i>
+				Ministry of Foreign Affairs of Denmark Asiatisk Plads 2<br> DK - 1448 Copenhagen
+			</li><!-- li -->
+		</ul><!-- mobile-nav-contact -->
+		<ul class="mobile-nav-social list-unstyled">
+				<li><a href="https://twitter.com/denmarkdotdk?lang=en"><i class="fa-brands fa-twitter"></i></a></li>
+					<li><a href="https://da-dk.facebook.com/denmark.dk/"><i class="fa-brands fa-facebook"></i></a></li>
+					<li><a href="https://www.instagram.com/denmarkdotdk/?hl=en"><i class="fa-brands fa-instagram"></i></a></li>
+		</ul><!-- mobile-nav-social -->
+	</div><!-- mobile-nav-content -->
+</div><!--mobile-nav-wrapper-->
+
+<a href="#" class="scroll-to-top scroll-to-target" data-target="html"><i class="fa-solid fa-arrow-up"></i></a>
+<!-- plugins js -->
+<script src="{% static 'frontend/assets/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/bootstrap/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/counter-up/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/youtube-popup/youtube-popup.jquery.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/jquery-validation/jquery.validate.min.js' %}"></script>
+<script src="{% static 'frontend/assets/js/theme.js' %}"></script>
+</body>
+
+
+</html>

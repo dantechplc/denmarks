@@ -1,0 +1,53 @@
+{% extends "frontend/base.html" %}
+{% block title %} Denmark - {{service.title}} {% endblock %}
+{% load static %}
+{% block content %}
+<div class="page-wrapper">
+	<section class="page-banner">
+		<div class="container">
+			<div class="page-breadcrumbs">
+			</div><!-- page-breadcrumbs -->
+			<div class="page-banner-title">
+				<h3>{{service.title}}</h3>
+			</div><!-- page-banner-title -->
+		</div><!-- container -->
+	</section><!--page-banner-->
+	<section class="department-details-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-4 col-xl-4">
+					<div class="sidebar">
+						<div class="sidebar-widget-list-inner">
+							<ul>
+								{% for item in services %}
+								<li><a href="{{item.get_absolute_url}}">{{item.title}}<i class="fa-solid fa-arrow-right-long"></i></a></li>
+								{% endfor %}
+							</ul><!-- ul -->
+						</div><!-- sidebar-widget-list-inner -->
+						<div class="sidebar-widget sidebar-widget-card">
+							<div class="sidebar-widget-card-icon">
+								<i class="flaticon-question"></i>
+							</div><!-- sidebar-widget-card-icon -->
+							<div class="sidebar-widget-card-content">
+								<h3><a href="contact.html">Get Any Help?</a></h3>
+								<p>Couldn't get any help? feel free to reach out to us via email <span><a href="mailto:help@denmarkgov.dk">help@denmarkgov.dk</a></span></p>
+							</div><!-- sidebar-widget-card-content -->
+						</div><!-- sidebar-widget sidebar-widget-card -->
+					</div><!--sidebar-->
+				</div><!--col-12 col-lg-4 col-xl-4-->
+				<div class="col-lg-8">
+					<div class="department-details-imgbox">
+						{% if service.cover_picture_thumbnail.url %}
+						<img src="{{service.cover_picture_thumbnail.url}}" class="img-fluid" alt="img-159">
+						{% endif %}
+					</div><!-- department-details-imgbox -->
+					<div class="department-details-content-box">
+						<h4 class="department-details-title">{{service.title}}</h4>
+						{{service.content|safe}}
+					</div><!-- department-details-content-box -->
+				</div><!-- col-lg-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- department-details-section -->
+</div><!--page-wrapper-->
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "frontend/base.html" %}
+{% block title %} Denmark - Services {% endblock %}
+{% load static %}
+{% block content %}
+<div class="page-wrapper">
+	<section class="page-banner">
+		<div class="container">
+			<div class="page-breadcrumbs">
+				<ul class="list-unstyled">
+					<li>Services</li>
+				</ul><!-- list-unstyled -->
+			</div><!--page-breadcrumbs-->
+			<div class="page-banner-title">
+				<h3>Services</h3>
+			</div><!--page-banner-title-->
+		</div><!-- container -->
+	</section><!--page-banner-->
+    	<section class="department-one-section">
+		<div class="container">
+			<div class="row row-gutter-30">
+				{% for service in services %}
+				<div class=" col-lg-6 col-xl-4 ">
+					<div class="department-two-card">
+						<div class="department-two-imgbox">
+							<div class="department-two-img">
+								<img src="{{service.cover_picture_thumbnail.url}}" class="img-fluid" alt="img-150">
+								<a href="{{service.get_absolute_url}}"></a>
+							</div><!-- department-two-img -->
+						</div><!-- department-two-imgbox -->
+						<div class="department-two-content">
+							<h4><a href="{{service.get_absolute_url}}">{{service.title}}</a></h4>
+						</div><!-- department-two-content -->
+					</div><!--department-two-card-->
+				</div><!-- col-12 col-lg-4 -->
+				{% endfor %}
+			</div><!-- row -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="blog-pagination-outer">
+						<div class="blog-pagination">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- container -->
+	</section><!-- department-one-section -->
+	<section class="cta-three">
+		<div class="cta-three-inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="cta-three-content text-center">
+							<h2 class="section-title text-white">City Goverment Offers a Wide <br>Range of Online Services</h2>
+						</div><!-- cta-three-content -->
+					</div><!-- col-lg-12 -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</div><!--cta-three-inner-->
+	</section><!--cta-three-->
+
+</div><!--page-wrapper-->
+{% endblock content %}

@@ -1,0 +1,265 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+<div class="page-wrapper">
+	<section class="main-slider">
+		<div class="main-slider-swiper owl-carousel owl-theme">
+			{% for item in carousel %}
+			<div class="item">
+				<div class="item-slider-bg"  style="background-image: url('{{item.cover_picture_thumbnail.url}}')"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="slider-content">
+								<div class="slider-tagline">Denmark Government Online Services</div>
+								<h1 class="section-title">{{item.title}} </h1>
+
+							</div><!-- slider-content -->
+						</div><!-- col-md-12 -->
+					</div><!-- row -->
+				</div><!-- container -->
+			</div><!--item-->
+			{% endfor %}
+		</div><!-- main-slider-swiper -->
+	</section><!--main-slider-->
+	<section class="department-section">
+		<div class="container">
+			<div class="department-section-inner">
+				<div class="row row-gutter-y-40">
+					{% for item in department %}
+					<div class="col-xl-2 col-lg-4 col-md-6">
+						<div class="department-card">
+							<div class="department-card-icon">
+								<a href="{{item.get_absolute_url}}"><i class="{{item.icon_name}}"></i></a>
+							</div><!-- department-card-icon -->
+							<div class="department-card-content">
+								<h5><a href="{{item.get_absolute_url}}">{{item.name}}</a></h5>
+							</div><!-- department-card-content -->
+						</div><!--department-card-->
+					</div><!--col-xl-2 col-lg-4 col-md-6-->
+					{% endfor %}
+				</div><!-- row -->
+			</div><!--department-section-inner-->
+		</div><!-- container -->
+	</section><!--department-section-->
+	<section class="about-section">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-6">
+					<div class="about-image">
+						<div class="about-image-inner img-one">
+							<img src="{% static 'frontend/assets/image/gallery/about-1.jpg' %}" class="img-fluid" alt="img-2">
+							<div class="sign-text"></div><!-- sign-text -->
+
+						</div><!--about-image-inner img-one-->
+						<div class="about-image-inner img-two">
+							<img src="{% static 'frontend/assets/image/shapes/about-3.jpg' %}" class="floated-image" alt="img-3">
+							<img src="{% static 'frontend/assets/image/gallery/about-2.jpg' %}" class="img-fluid" alt="img-4">
+						</div><!--about-image-inner img-two-->
+					</div><!--about-image-->
+				</div><!--col-lg-6-->
+				<div class="col-lg-6">
+					<div class="about-inner">
+						<div class="section-title-box">
+							<div class="section-tagline">Our introductions</div><!-- section-tagline -->
+							<h2 class="section-title">Welcome & Support Denmark </h2>
+							<p>Work-life balance is important in Denmark - people take pride in their work but do not feel the need to demonstrate their dedication by working long hours.</p>
+						</div><!-- section-title-box -->
+						<div class="row">
+							<div class="col-xl-6 col-lg-12 col-md-6">
+								<div class="about-card">
+									<h4 class="about-title"><i class="fa-solid fa-circle-check"></i>Business & Economy</h4>
+
+								</div><!-- about-card -->
+							</div><!-- col-xl-6 col-lg-12 col-md-6 -->
+							<div class="col-xl-6 col-lg-12 col-md-6">
+								<div class="about-card">
+									<h4 class="about-title"><i class="fa-solid fa-circle-check"></i>Health & Education</h4>
+								</div><!-- about-card -->
+							</div><!-- col-xl-6 col-lg-12 col-md-6 -->
+							<div class="col-xl-6 col-lg-12 col-md-6">
+								<div class="about-card">
+									<h4 class="about-title"><i class="fa-solid fa-circle-check"></i>Art & Culture</h4>
+								</div><!-- about-card -->
+							</div><!-- col-xl-6 col-lg-12 col-md-6 -->
+							<div class="col-xl-6 col-lg-12 col-md-6">
+								<div class="about-card">
+									<h4 class="about-title"><i class="fa-solid fa-circle-check"></i>Housing & Land</h4>
+								</div><!-- about-card -->
+							</div><!-- col-xl-6 col-lg-12 col-md-6 -->
+						</div><!--row-->
+
+					</div><!-- about-inner -->
+				</div><!--col-lg-6-->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!--about-section-->
+	<section class="service-section">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-6">
+					<div class="section-title-box">
+						<div class="section-tagline">Government Service</div><!-- section-tagline -->
+						<h2 class="section-title text-white">Explore our Online<br> Governmet Services <br> & Resources</h2>
+						<div class="section-text">
+							<p>Denmark's government services exemplify a commitment to providing essential support and resources to its citizens while embracing innovation and efficiency to meet evolving needs in the modern world.</p>
+						</div><!-- section-text -->
+						<div class="service-arrow-image">
+							<img src="{% static 'frontend/assets/image/shapes/arrow.png' %}" alt="img-6">
+						</div><!-- service-arrow-image -->
+					</div><!--section-title-box-->
+				</div><!--col-lg-6-->
+				<div class="col-lg-5">
+					<div class="service-card">
+						<div class="service-card-video">
+							<a href="https://player.vimeo.com/video/636212227?app_id=122963" class="video-popup">
+								<i style="color:white;" class="fa fa-play"></i>
+							</a><!-- video-popup -->
+						</div>
+						<ul class="list-unstyled">
+							{% for service in services %}
+							<li><a href="{{service.get_absolute_url}}">{{service}} <i class="fa-solid fa-chevron-right"></i></a></li>
+							{% endfor %}
+						</ul><!-- list-unstyled -->
+						<div class="service-button">
+							<a href="{% url 'frontend:all_services' %}" class="btn btn-primary">Discover More</a>
+						</div><!-- service-button -->
+					</div><!--service-card-->
+				</div><!--col-lg-5-->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!--service-section-->
+	<section class="funfact-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-3 col-md-6">
+					<div class="funfact-counter-item">
+						<div class="funfact-counter-box">
+							<div class="funfact-counter-icon">
+								<i class="flaticon-running-man"></i>
+							</div><!-- funfact-counter-icon -->
+							<div class="funfact-counter-number">
+								<h3 class="counter-number">5.8</h3>
+								<span class="funfact-counter-number-postfix">M</span>
+							</div><!-- funfact-counter-number -->
+						</div><!-- funfact-counter-box -->
+						<p class="funfact-text">Total People Lived<br>in our City</p>
+					</div><!--funfact-counter-item-->
+				</div><!--col-xl-3 col-md-6-->
+				<div class="col-xl-3 col-md-6">
+					<div class="funfact-counter-item">
+						<div class="funfact-counter-box">
+							<div class="funfact-counter-icon">
+								<i class="flaticon-coverage"></i>
+							</div><!-- funfact-counter-icon -->
+							<div class="funfact-counter-number">
+								<h3 class="counter-number">42.9</h3>
+								<span class="funfact-counter-number-postfix">k</span>
+							</div><!-- funfact-counter-number -->
+						</div><!-- funfact-counter-box -->
+						<p class="funfact-text">Square kilometres<br> Region Covers</p>
+					</div><!--funfact-counter-item-->
+				</div><!--col-xl-3 col-md-6-->
+				<div class="col-xl-3 col-md-6">
+					<div class="funfact-counter-item">
+						<div class="funfact-counter-box">
+							<div class="funfact-counter-icon">
+								<i class="flaticon-landscape"></i>
+							</div><!-- funfact-counter-icon -->
+							<div class="funfact-counter-number">
+								<h3 class="counter-number">45</h3>
+								<span class="funfact-counter-number-postfix">%</span>
+							</div><!-- funfact-counter-number -->
+						</div><!-- funfact-counter-box -->
+						<p class="funfact-text">Private & Domestic <br>Garden Land</p>
+					</div><!--funfact-counter-item-->
+				</div><!--col-xl-3 col-md-6-->
+				<div class="col-xl-3 col-md-6">
+					<div class="funfact-counter-item">
+						<div class="funfact-counter-box">
+							<div class="funfact-counter-icon">
+								<i class="flaticon-barn-3"></i>
+							</div><!-- funfact-counter-icon -->
+							<div class="funfact-counter-number">
+								<h3 class="counter-number">4</h3>
+								<span class="funfact-counter-number-postfix">th</span>
+							</div><!-- funfact-counter-number -->
+						</div><!-- funfact-counter-box -->
+						<p class="funfact-text">Average Costs of Home <br> Ownership</p>
+					</div><!--funfact-counter-item-->
+				</div><!--col-xl-3 col-md-6-->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- /.funfact-section -->
+	<section class="mayor-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="mayor-box">
+						<div class="section-title-box">
+
+							<h2 class="section-title">Working in Denmark</h2>
+							<p>The world's best work-life balance, an excellent business climate, and an efficient welfare state. These are just three of the reasons why it is popular to come work and live in Denmark.</p>
+						</div><!--section-title-box-->
+						<div class="mayor-icon-box">
+							<div class="mayor-icon">
+								<i class="flaticon-professor"></i>
+							</div><!-- mayor-icon -->
+							<h4 class="mayor-icon-title">Working in Denmark offers numerous benefits.</h4>
+						</div><!--mayor-icon-box-->
+						<ul class="list-unstyled list-style-one">
+							<li>
+								<i class="fa-solid fa-circle-check"></i>
+								<p>Work-Life Balance</p>
+							</li><!-- li -->
+							<li>
+								<i class="fa-solid fa-circle-check"></i>
+								<p>Strong Social Welfare System</p>
+							</li><!-- li -->
+							<li>
+								<i class="fa-solid fa-circle-check"></i>
+								<p>Cultural and Social Benefits:</p>
+							</li><!-- li -->
+						</ul><!-- ul -->
+					</div><!--mayor-box-->
+				</div><!-- col-lg-6 -->
+				<div class="col-lg-6">
+					<div class="mayor-img">
+						<img src="{% static 'frontend/assets/image/shapes/shape-1.png' %}" class="floated-image-one" alt="img-7">
+						<img src="{% static 'frontend/assets/image/gallery/mayor-2.jpg' %}" alt="img-8">
+
+					</div><!--mayor-img-->
+				</div><!--col-lg-6"-->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!--mayor-section-->
+
+	<section class="cta-two-section">
+		<div class="container">
+			<div class="cta-two-section-inner">
+				<div class="row">
+					<div class="col-xl-5">
+						<div class="cta-two-title">
+							<div class="cta-two-card-icon">
+								<i class="flaticon-envelope-2"></i>
+							</div><!-- cta-two-card-icon -->
+							<div class="cta-two-card-content">
+								<p>Stay Connected</p>
+								<h3>Join Our Newsletter</h3>
+							</div><!-- cta-two-card-content -->
+						</div><!--cta-two-title-->
+					</div><!--col-xl-5-->
+					<div class="col-xl-7">
+						<form action="https://webdevcode.com/html/towngov/{% static 'frontend/assets/inc/sendemail.php" class="cta-two-form" method="post">
+							<div class="cta-two-form-group">
+								<input type="email" id="email" class="input-text" placeholder="Email address" name="email" required>
+							</div><!-- cta-two-card-form -->
+							<button class="btn btn-primary">Subscribe</button>
+						</form><!-- cta-two-form -->
+					</div><!-- col-xl-7-->
+				</div><!-- row -->
+			</div><!-- cta-two-section-inner -->
+		</div><!-- container -->
+	</section><!--cta-two-section-->
+</div><!--page-wrapper-->
+{% endblock %}
