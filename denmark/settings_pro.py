@@ -131,13 +131,13 @@ TINYMCE_DEFAULT_CONFIG = {
      # To force a specific language instead of the Django current language.
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "https://denmarkgov.dk",
-    "https://www.denmarkgov.dk",
-]
-CSRF_TRUSTED_ORIGINS = [
-    "https://denmarkgov.dk",
-    "https://www.denmarkgov.dk",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://denmarkgov.dk",
+#     "https://www.denmarkgov.dk",
+# ]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://denmarkgov.dk",
+#     "https://www.denmarkgov.dk",
+# ]
 
 
