@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
@@ -36,12 +35,9 @@ class Services(models.Model):
     def get_absolute_url(self):
         """Absolute URL for Post"""
         return reverse('frontend:service_detail', kwargs={"slug": self.slug})
-    
+
     class Meta:
         verbose_name_plural = "Services"
-
-
-
 
 
 class Department(models.Model):
@@ -90,7 +86,6 @@ class DenmarkProfile(models.Model):
     pass
 
 
-
 class Inquiry(models.Model):
     name = models.CharField(max_length=200, null=True)
     email = models.EmailField(max_length=200, null=True)
@@ -99,3 +94,6 @@ class Inquiry(models.Model):
 
     def __str__(self):
         return str(self.email) + ' ' + 'requested for ' + str(self.services)
+
+    class Meta:
+        verbose_name_plural = 'Inquiries'

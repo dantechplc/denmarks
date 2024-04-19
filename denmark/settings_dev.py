@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     #  Third party libraries
     'tinymce',
     'imagekit',
+    'sweetify',
     # 'social_share',
     # my apps
     'frontend',
@@ -129,3 +130,6 @@ TINYMCE_DEFAULT_CONFIG = {
 
 # Email setting
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# possible options: 'sweetalert', 'sweetalert2' - default is 'sweetalert2'
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'

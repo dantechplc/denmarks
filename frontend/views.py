@@ -1,3 +1,4 @@
+import sweetify
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
@@ -6,6 +7,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.shortcuts import render
 
 # Create your views here.
+from django.views.decorators.cache import never_cache
 from django.views.generic import DetailView
 from frontend.models import Services
 
@@ -16,7 +18,7 @@ from frontend.models import Inquiry
 
 from frontend.emailsender import EmailSender
 
-
+@never_cache
 def HomeView(request):
     services = Services.objects.filter(status='Published')[:6]
     department = Department.objects.filter(headline=True, active=True)[:6]
@@ -29,9 +31,10 @@ def HomeView(request):
         services = request.POST.get('services')
         Inquiries = Inquiry.objects.create(name=name, email=email, phone_number=phone_number, services=services)
         Inquiries.save()
-        messages.success(request, "Your request has been successfully submitted. One of our agents will be in touch "
-                                  "with you shortly.")
         EmailSender.inquiry(email=email)
+        sweetify.success(request, 'Success!', text='Your request has been successfully submitted. One of our agents '
+                                                   'will be in touch with you shortly',
+                         button='OK',  timer=10000, timerProgressBar='true',)
         # Return success response using Sweet Alert
         return render(request, 'frontend/home.html', {'sweet_alert': True, 'context': context})
     return render(request, 'frontend/home.html', context)
