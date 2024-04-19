@@ -5,6 +5,8 @@ from django.contrib import admin
 
 from frontend.models import *
 
+
 admin.site.register(Services)
 admin.site.register(Department)
 admin.site.register(Carousel)
+admin.site.register(Inquiry)

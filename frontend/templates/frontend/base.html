@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/swiper/swiper-bundle.min.css' %}">
 	<link rel="stylesheet" href="{% static 'frontend/assets/vendor/youtube-popup/youtube-popup.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.5/sweetalert2.min.css">
 	<!-- favicons Icons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'frontend/assets/image/favicon/denmark_fav.png' %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'frontend/assets/image/favicon/denmark_fav.png' %}">
@@ -49,7 +50,7 @@
 								<i class="fa-solid fa-envelope"></i>
 							</div><!-- topbar-icon -->
 							<div class="topbar-text">
-								<a href="mailto:help@denmarkgov.dk">help@denmarkgov.dk</a>
+								<a href="mailto:help@denmarkgov.com">help@denmarkgov.com</a>
 							</div><!-- topbar-text -->
 						</li><!-- li -->
 						<li>
@@ -157,10 +158,9 @@
 						<div class="footer-widget-explore">
 							<h4 class="footer-widget-title">Explore</h4>
 							<ul class="list-unstyled">
-								<li><a href="#">Our Government</a></li>
-								<li><a href="#">Business & Industry</a></li>
-								<li><a href="#">Roads & Transport</a></li>
-								<li><a href="#">License & Registrations</a></li>
+								{% for service in services %}
+								<li><a href="{{service.get_absolute_url}}">{{service.title}}</a></li>
+								{% endfor %}
 							</ul><!-- list-unstyled -->
 						</div><!-- footer-widget-explore -->
 					</div><!--footer-widget-->
@@ -170,11 +170,9 @@
 						<div class="footer-widget-department">
 							<h4 class="footer-widget-title">Departments</h4>
 							<ul class="list-unstyled">
-								<li><a href="#">Health & Safety</a></li>
-								<li><a href="#">Housing & Land</a></li>
-								<li><a href="#">Legal & Finance</a></li>
-								<li><a href="#">Transport & Traffic</a></li>
-								<li><a href="#">Arts & Culture</a></li>
+								{% for department in departments %}
+								<li><a href="{{department.get_absolute_url}}">{{department.name}}</a></li>
+								{% endfor %}
 							</ul><!-- list-unstyled -->
 						</div><!-- footer-widget-department -->
 					</div><!--footer-widget-->
@@ -188,7 +186,7 @@
 						<div class="footer-widget-contact-list">
 							<i class="fa-solid fa-envelope"></i>
 							<div class="footer-widget-contact-item">
-								<a href="mailto:help@denmarkgov.dk">help@denmarkgov.dk</a>
+								<a href="mailto:help@denmarkgov.com">help@denmarkgov.com</a>
 							</div><!-- footer-widget-contact-item -->
 						</div><!-- footer-widget-contact-list -->
 						<div class="footer-widget-contact-list">
@@ -234,7 +232,7 @@
 
 			<li>
 				<i class="fa-solid fa-envelope"></i>
-				<a href="mailto:help@denmarkgov.dk">help@denmarkgov.dk</a>
+				<a href="mailto:help@denmarkgov.com">help@denmarkgov.com</a>
 			</li><!-- li -->
 			<li>
 				<i class="fa-solid fa-map-marker-alt"></i>
@@ -260,6 +258,7 @@
 <script src="{% static 'frontend/assets/vendor/youtube-popup/youtube-popup.jquery.js' %}"></script>
 <script src="{% static 'frontend/assets/vendor/jquery-validation/jquery.validate.min.js' %}"></script>
 <script src="{% static 'frontend/assets/js/theme.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.5/sweetalert2.min.js"></script>
 </body>
 
 

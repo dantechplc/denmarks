@@ -84,3 +84,18 @@ class Carousel(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
+class DenmarkProfile(models.Model):
+    pass
+
+
+
+class Inquiry(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    email = models.EmailField(max_length=200, null=True)
+    phone_number = models.CharField(max_length=200, null=True)
+    services = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        return str(self.email) + ' ' + 'requested for ' + str(self.services)

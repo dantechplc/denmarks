@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-q8*&cnr2*7@jut%=7)_k_^0i2j)z$)*_^#3=cja6prta&o9p_v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*", '13.60.41.250', 'denmarkgov.dk', 'www.denmarkgov.dk']
+ALLOWED_HOSTS = ["*", '13.60.41.250', 'denmarkgov.com', 'www.denmarkgov.com']
 
 
 # Application definition
@@ -68,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'frontend.context_processors.Departments',
+                'frontend.context_processors.Service',
             ],
         },
     },
@@ -131,13 +133,22 @@ TINYMCE_DEFAULT_CONFIG = {
      # To force a specific language instead of the Django current language.
 }
 
-# CORS_ALLOWED_ORIGINS = [
-#     "https://denmarkgov.dk",
-#     "https://www.denmarkgov.dk",
-# ]
-# CSRF_TRUSTED_ORIGINS = [
-#     "https://denmarkgov.dk",
-#     "https://www.denmarkgov.dk",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "https://denmarkgov.com",
+    "https://www.denmarkgov.com",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://denmarkgov.com",
+    "https://www.denmarkgov.com",
+]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+DEFAULT_FROM_EMAIL = 'DENMARK GOVERNMENT<support@denmarkgov.com>'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'support@denmarkgov.com'
+EMAIL_HOST_PASSWORD = 'D@ntech3668'
+# LOGIN_REDIRECT_URL = 'transaction:dashboard'
 
 

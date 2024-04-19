@@ -67,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'frontend.context_processors.Departments',
+                'frontend.context_processors.Service',
             ],
         },
     },
@@ -123,3 +125,7 @@ TINYMCE_DEFAULT_CONFIG = {
     "custom_undo_redo_levels": 10,
     # To force a specific language instead of the Django current language.
 }
+
+
+# Email setting
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

@@ -1,5 +1,7 @@
+from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404, redirect
 
 from django.shortcuts import render
 
@@ -10,6 +12,9 @@ from frontend.models import Services
 from frontend.models import Carousel
 
 from frontend.models import Department
+from frontend.models import Inquiry
+
+from frontend.emailsender import EmailSender
 
 
 def HomeView(request):
@@ -17,6 +22,18 @@ def HomeView(request):
     department = Department.objects.filter(headline=True, active=True)[:6]
     carousel = Carousel.objects.filter(active=True)
     context = {'services': services, 'carousel': carousel, 'department': department}
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        services = request.POST.get('services')
+        Inquiries = Inquiry.objects.create(name=name, email=email, phone_number=phone_number, services=services)
+        Inquiries.save()
+        messages.success(request, "Your request has been successfully submitted. One of our agents will be in touch "
+                                  "with you shortly.")
+        EmailSender.inquiry(email=email)
+        # Return success response using Sweet Alert
+        return render(request, 'frontend/home.html', {'sweet_alert': True, 'context': context})
     return render(request, 'frontend/home.html', context)
 
 
@@ -34,11 +51,6 @@ def ContactView(request):
 
 def error_404_view(request, exception):
     return render(request, 'frontend/404.html')
-
-
-
-
-
 
 
 class ServiceDetailView(DetailView):
@@ -75,17 +87,18 @@ class DepartmentDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["department"] = self.main_post
-        context["departments"] = Department.objects.filter(headline=True, active=True).exclude(slug=self.main_post.slug)[:6]
+        context["departments"] = Department.objects.filter(headline=True, active=True).exclude(
+            slug=self.main_post.slug)[:6]
         return context
 
 
 def all_services(request):
     services = Services.objects.filter(status='Published')
-    context = {'services': services,}
+    context = {'services': services, }
     return render(request, 'frontend/all_services.html', context)
 
 
 def all_departments(request):
     department = Department.objects.filter(active=True)
-    context = {'departments': department,}
+    context = {'departments': department, }
     return render(request, 'frontend/departments.html', context)

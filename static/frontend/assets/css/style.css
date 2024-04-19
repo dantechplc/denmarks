@@ -2494,7 +2494,7 @@ a.search-toggler{
 	align-items: center;
 	justify-content: space-between;
 	font-size: 16px;
-	color: var(--thm-secondary);
+	color: #f5fdff;
 }
 .service-link-box li a:hover {
 	color:var(--thm-white);
