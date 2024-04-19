@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #  Third party libraries
     'tinymce',
     'imagekit',
+    'sweetify',
     # my apps
     'frontend',
 ]
@@ -150,5 +151,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'support@denmarkgov.com'
 EMAIL_HOST_PASSWORD = 'D@ntech3668'
 # LOGIN_REDIRECT_URL = 'transaction:dashboard'
+
+# possible options: 'sweetalert', 'sweetalert2' - default is 'sweetalert2'
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
 
