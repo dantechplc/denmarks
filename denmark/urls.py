@@ -20,6 +20,8 @@ urlpatterns = [
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'frontend.views.error_404_view'
+handler500 = 'frontend.views.error_500_view'
+handler403 = 'frontend.views.error_403_view'
 
 if settings_dev.DEBUG:
     urlpatterns += static(settings_dev.MEDIA_URL, document_root=settings_dev.MEDIA_ROOT)

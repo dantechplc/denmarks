@@ -105,3 +105,15 @@ def all_departments(request):
     department = Department.objects.filter(active=True)
     context = {'departments': department, }
     return render(request, 'frontend/departments.html', context)
+
+
+def error_404_view(request, exception):
+    return render(request, 'frontend/404.html')
+
+
+def error_500_view(request):
+    return render(request, 'frontend/500.html')
+
+
+def error_403_view(request, exception):
+    return render(request, 'frontend/403.html')

@@ -1,5 +1,4 @@
 {% extends "frontend/base.html" %}
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {% load static %}
 {% block content %}
 <div class="page-wrapper">
@@ -25,21 +24,6 @@
 	</section><!--main-slider-->
 	<section class="service-two-section">
 		<div class="container">
-			  {% for message in messages %} {% if message.tags == 'success' %}
-             <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.5/sweetalert2.min.js"></script>
-			<script>
-				let message = '{{message}}';
-				Swal.fire({
-					title: 'Success!',
-					text: message,
-					icon: 'success',
-					confirmButtonText: 'OK'
-				});
-			</script>
-
-              {% endif %} {% endfor %}
-
-
 			<div class="row row-gutter-y-40">
 				<div class="col-12 col-lg-4 col-xl-4">
 					<div class="service-two-card">
